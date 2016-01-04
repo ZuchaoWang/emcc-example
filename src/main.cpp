@@ -1,4 +1,5 @@
 #include "myfunc.h"
+#include "myclass.h"
 #include <iostream>
 
 extern "C" {
@@ -8,6 +9,22 @@ extern "C" {
     
     void mysqrtArrayC(int n, float* a, float* b) {
         mysqrtArray(n, a, b);
+    }
+    
+    int createMyClassC() {
+        return createMyClass();
+    }
+    
+    void deleteMyClassC(int _id) {
+        deleteMyClass(_id);
+    }
+    
+    void setMyClassValueC(int _id, float _x) {
+        setMyClassValue(_id, _x);
+    }
+    
+    float getMyClassAnswerC(int _id) {
+        return getMyClassAnswer(_id);
     }
 }
 
@@ -27,6 +44,11 @@ int main() {
             std::cout<<", ";
         }
     }
+    
+    int handler = createMyClassC();
+    setMyClassValueC(handler, 10);
+    std::cout<<getMyClassAnswerC(handler)<<std::endl;
+    deleteMyClassC(handler);
     
     return 0;
 }
