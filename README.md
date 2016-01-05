@@ -19,6 +19,6 @@ Enter the main directory and run <code>./build.sh</code> (works only in UNIX-lik
 
 * src & include directory: the C++ project
 * wrap directory: a javascript wrapper which will provide more friendly access to the built library, following [umd pattern](https://github.com/umdjs/umd)
-* html directory: html testing files that call the built javascript library
-* dist directory: the built javascript library will be here, testing html files are also copied here for convenience
+* dist directory: the built javascript library will be here
+* test directory: html testing files that call the built javascript library
 * build.sh: a shell script that reads C++ project and javascript wrapper, then build the javascript library
