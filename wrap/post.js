@@ -1,5 +1,9 @@
     var mysqrt = Module.cwrap('mysqrtC','number',['number']),
-        mysqrtArray = Module.cwrap('mysqrtArrayC','undefined',['number','number','number']);
+        mysqrtArray = Module.cwrap('mysqrtArrayC','undefined',['number','number','number']),
+        createMyClass = Module.cwrap('createMyClassC','number',[]),
+        deleteMyClass = Module.cwrap('deleteMyClassC','undefined',['number']),
+        setMyClassValue = Module.cwrap('setMyClassValueC','undefined',['number','number']),
+        getMyClassAnswer = Module.cwrap('getMyClassAnswerC','number',['number']);
     
     return {
         mysqrt: mysqrt,
@@ -24,6 +28,10 @@
             Module._free(bHeap);
             
             return b;
-        }
+        },
+        createMyClass: createMyClass,
+        deleteMyClass: deleteMyClass,
+        setMyClassValue: setMyClassValue,
+        getMyClassAnswer: getMyClassAnswer
     };
 }));
